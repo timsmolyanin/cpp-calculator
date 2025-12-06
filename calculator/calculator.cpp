@@ -3,8 +3,6 @@
 #include <string>
 #include <cmath>
 
-using Number = double;
-
 enum class Operation {
     Add,
     Subtract,
@@ -46,12 +44,12 @@ Operation ReadCommand(std::string& input_cmd) {
     return Operation::Unknown;
 }
 
-
-
 bool RunCalculatorCycle() {
-    Number input_number, result, memory;
+    Number input_number = 0;
+    Number result = 0;
+    Number memory = 0;
     bool is_memorized = false;
-    std::string input_cmd;
+    std::string input_cmd = "";
     if (!ReadNumber(input_number)) {
         return false;
     }
